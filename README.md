@@ -3,7 +3,7 @@ Pag Ency pag Encription sa code.
 
 
 
-*harold Encryption cdn*
+*harold Encryption pag clone sa akung file.*
 ```git
 git clone --no-checkout https://github.com/HLord-G/ency.git
 ```
@@ -23,84 +23,24 @@ git clone --no-checkout https://github.com/HLord-G/ency.git
     }`;
 
   
-	// pag encrypt sa data
+   // pag encrypt sa data
     const encryptedMessage = buhat_ency(message, bantayYabe);
     console.log('Encrypted message:', encryptedMessage);
 
-	// pag decrypt sa data
+   // pag decrypt sa data
     const decryptedMessage = balik_ency(encryptedMessage, bantayYabe);
     const jsons = JSON.parse(decryptedMessage)
     console.log(jsons)
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script> 
-```
-
-
+## Pag Encryption 
 ```js
-
-function encrypt(message, secretKey) {
-  const salt = CryptoJS.lib.WordArray.random(128 / 8);
-  const key = CryptoJS.PBKDF2(secretKey, salt, {
-    keySize: 128 / 32,
-    iterations: 1000,
-  });
-  
-  const iv = CryptoJS.lib.WordArray.random(128 / 8);
-  const encrypted = CryptoJS.AES.encrypt(message, key, {
-    iv: iv,
-    mode: CryptoJS.mode.CBC,
-    padding: CryptoJS.pad.Pkcs7,
-  });
-  return salt.toString() + iv.toString() + encrypted.toString();
-}
-
-
-
-function decrypt(ciphertext, secretKey) {
-  const salt = CryptoJS.enc.Hex.parse(ciphertext.substr(0, 32));
-  const iv = CryptoJS.enc.Hex.parse(ciphertext.substr(32, 32));
-  const encryptedMessage = ciphertext.substr(64);
-  const key = CryptoJS.PBKDF2(secretKey, salt, {
-    keySize: 128 / 32,
-    iterations: 1000,
-  });
-
-  const decrypted = CryptoJS.AES.decrypt(encryptedMessage, key, {
-    iv: iv,
-    mode: CryptoJS.mode.CBC,
-    padding: CryptoJS.pad.Pkcs7,
-  });
-
-  return decrypted.toString(CryptoJS.enc.Utf8);
-
-}
-  
-
-const secretKey = 'my_secret_phcoder';
+ const encryptedMessage = buhat_ency("code text here", bantayYabe);
 ```
 
 
-
+## Pag Decryption 
 ```js
-const message = 'harold';
-
-const encryptedMessage = encrypt(message, secretKey);
-console.log('Encrypted message:', encryptedMessage);
-
-const decryptedMessage = decrypt(encryptedMessage, secretKey);
-console.log('Decrypted message:', decryptedMessage); // Output: harold
+const decryptedMessage = balik_ency("sdfkefn32lck20dlkj49c", bantayYabe);
 ```
+
