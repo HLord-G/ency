@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+    <script src="src/lib/ency/ency.js"></script>
+    <script  src="src/lib/ency/ency_engine.js"></script>
+
+
+    <script>
+    const message = `{
+    "name":"harold guzman",
+    "datus":"this is a private keys"
+    }`;
+
+    const encryptedMessage = buhat_ency(message, bantayYabe);
+    console.log('Encrypted message:', encryptedMessage);
+
+    const decryptedMessage = balik_ency(encryptedMessage, bantayYabe);
+    const jsons = JSON.parse(decryptedMessage)
+    console.log(jsons)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
